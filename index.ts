@@ -1,75 +1,63 @@
-#! /usr/bin/env node 
+#! /usr/bin/env node
 import inquirer from "inquirer";
 
 import chalk from "chalk";
 
-console.log(chalk.bold.bgGreenBright("\t\n   WELCOME TO GOVERNOR SINDH IT INITATIVE (APPLY NOW) \t\n"))
+console.log(chalk.yellowBright("\t welcome to ash quiz\n"))
+console.log(chalk.cyanBright("\t BEST OF LUCK!!!\n"))
 
-const randomNumber: number = Math.floor(10000 + Math.random() *90000);
-let answer = await inquirer.prompt([
+let quiz_questions = await inquirer.prompt([
     {
-    name: "students",
-    type: "input",
-    message: (chalk.bgGrey("\t\n ENTER YOUR NAME \t\n")),
-    validate: function(value){
-        if (value.trim() !== ""){
-            return true;
-        }
-        return "PLEASE ENTER A NON-EMPTY VALUE.";
-    },
+    name: "answer_1",
+    type: "checkbox",
+    message: "what is the main purpose of a pharmacy?",
+    choices:["selling toys",  
+             "dispensing medications",
+             "providing gym memberships",
+             "selling furniture"
+            ],
 },
 {
-    name: "courses",
-    type: "list",
-    message:(chalk.bgGrey("\t\n ENTER YOUR ENROLL COURSE")),
-    choices: ["TYPESCRIPT","JAVASCRIPT","PYTHON","NEXT.JS" ,"CSS", "HTML"]
-}]);
-
-const courseFee : { [key: string]: number } = {
-    TYPESCRIPT: 6000,
-    JAVASCRIPT: 6000,
-    PYTHON: 6000,
-    "NEXT.JS":  5000,
-    CSS: 2000,
-    HTML: 2000,
-};
-
-console.log((chalk.bgBlueBright(`coursefee: ${courseFee[answer.courses]}/-`)));
-
-let payment_method = await inquirer.prompt([
-    {
-    name: "payment",
-    type: "list",
-    message: (chalk.bgGreenBright("\t\n ENTER YOUR PAYMENT METHOD",)),
-    choices:["blank transfer", "easy paisa", "jazz cash"],
+   name: "answer_2",
+   type: "checkbox",
+   message: "What do you call a person who prepares and dispenses medications?",
+   choices: ["doctor",
+             "teacher",
+             "pharmacist",
+             "chef"
+            ],
 },
 {
-    name: "amount",
-    type: "input",
-    message: "\t\n transfer money\t\n",
-    validate: function(value){
-        if (value.trim() !== ""){
-            return true;
-        }
-        return "PLEASE ENTER A NON-EMPTY VALUE.";
-    },
-}]
-);
-console.log(`select payment method ${payment_method.payment}`);
+    name: "answer_3",
+    type: "checkbox",
+    message: "Which of these is commonly used to treat a headache?",
+    choices: ["shampoo",
+              "pain reliever",
+              "toothpaste",
+              "deodorant" 
+            ],
+},
+]);
 
-const selectedcourseFee: number = courseFee[answer.courses];
-const paymentAmount: number = parseFloat(payment_method.amount);
-
-if(selectedcourseFee === paymentAmount){
-    console.log(chalk.bgYellowBright("\tCongratulation!,you have purchased this course.\n"));
-
-    console.log(chalk.bgMagentaBright(`student name: ${chalk.bold.underline(answer.students)}`)
-);
-
-console.log(chalk.bgCyanBright(`student ID: ${chalk.bold.underline(randomNumber)}`));
-console.log(chalk.bgGreenBright(`course name: ${chalk.bold.underline(answer.courses)}`));
+if(quiz_questions.answer_1.includes("dispensing medications")){
+   console.log(chalk.greenBright("correct answer"))
 }
-else{
-    console.log(chalk.bgRedBright("\tinvalid amount due to courses\n"))
-
-};
+    else{
+        chalk.redBright
+        console.log(chalk.redBright("wrong answer"))
+    }
+ if(quiz_questions.answer_2.includes("pharmacist")){
+    console.log((chalk.greenBright("correct answer")))
+ }
+    else{
+        chalk.redBright
+       console.log(chalk.redBright("wrong answer"))
+    }
+if(quiz_questions.answer_3.includes("pain reliever" )){
+    console.log(chalk.greenBright("correct answer"))
+}
+  else{
+    chalk.redBright
+    console.log(chalk.redBright("wrong answer"))
+  }
+ console.log(chalk.magentaBright("\t thank you for taking this quiz\n"));
