@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "ash-my-bank",
+=======
+  "name": "ash-quiz-game",
+>>>>>>> 1dd8a219780276cfe0a1d5f1c2cfbe484adfece0
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
