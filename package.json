@@ -1,13 +1,22 @@
 {
+<<<<<<< HEAD
   "name": "ash-opp-my-bank",
   "version": "1.0.1",
+=======
+<<<<<<< HEAD
+  "name": "ash-my-bank",
+=======
+  "name": "ash-quiz-game",
+>>>>>>> 1dd8a219780276cfe0a1d5f1c2cfbe484adfece0
+  "version": "1.0.0",
+>>>>>>> 17ac9b84015827c38b9dd9434ae33f97d566d603
   "main": "index.js",
   "type": "module",
   "bin": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "ashfa shakeel",
   "license": "ISC",
   "keywords": [],
   "description": "",
